@@ -4,7 +4,7 @@ import Lightbox from "yet-another-react-lightbox";
 import 'yet-another-react-lightbox/styles.css';
 import CustomImage from './CustomImage';
 
-export default function Photocard({ photos, thumb }) {
+export default function Photocard({ photos }) {
     const [index, setIndex] = useState(-1);
     return (
         <>
