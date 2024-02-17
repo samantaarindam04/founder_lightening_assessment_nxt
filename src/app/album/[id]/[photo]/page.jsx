@@ -26,20 +26,6 @@ function Photo({ params }) {
         dispatch(fetchUsers())
     }, [])
 
-    const thumbPhotos = photoLists.map((photo) => ({
-        src: photo.thumbnailUrl,
-        width: Math.floor(Math.random() * (200 - 100 + 1) + 100),
-        height: Math.floor(Math.random() * (150 - 100 + 1) + 100),
-        srcSet: breakpoints.map((breakpoint) => {
-            const height = Math.round(breakpoint);
-            return {
-                src: photo.thumbnailUrl,
-                width: breakpoint,
-                height,
-            };
-        }),
-    }));
-
     const photos = photoLists.map((photo) => ({
         src: photo.url,
         width: Math.floor(Math.random() * (400 - 100 + 1) + 100),
@@ -59,7 +45,7 @@ function Photo({ params }) {
             {
                 allPhotos.status ? '' : <Loading/>
             }
-            <Photocard thumb={thumbPhotos} photos={photos} />
+            <Photocard photos={photos} />
 
         </>
 
